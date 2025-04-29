@@ -6,6 +6,13 @@
   <title>Vehicle Delivery Receipt</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    :root {
+      --primary-color: #005f73;
+      --secondary-color: #94d2bd;
+      --accent-color: #0a9396;
+      --light-bg: #e0fbfc;
+      --text-color: #333;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -132,6 +139,21 @@
   object-fit: cover; /* Fills the container neatly */
   display: block;
 }
+    .track-btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: 0.3s ease;
+      text-align: center;
+    }
+    .track-btn:hover {
+      background-color: var(--primary-color);
+    }
 
   </style>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -141,7 +163,7 @@
 <body>
   <header>
     <div class="logo-container">
-      <img src="https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/2181/2024/04/13194207/CarvanaLogo-1024x633.webp" alt="Company Logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHxh4r00izc8krUyjlptaLZNTU5Nh76OW9tQ&s" alt="Company Logo">
     </div>
     <h1>Vehicle Delivery Receipt 🚗</h1>
       <p><strong>Delivery Date:</strong> May 1, 2025</p>
@@ -152,21 +174,21 @@
       <h2>Dealer Information</h2>
       <p><strong>Name:</strong> Elite Auto Sales</p>
       <p><strong>Address:</strong> 123 Main Street, Cityville, CA 90210</p>
-      <p><strong>Phone:</strong> (555) 123-4567</p>
+      <p><strong>Phone:</strong> +1 (987) 654-3210</p>
       <p><strong>Email:</strong> sales@eliteautos.com</p>
     </div>
 
     <div class="section">
       <h2>Client Information</h2>
-      <p><strong>Name:</strong> ****************</p>
-      <p><strong>Address:</strong> 1005 Old Charlotte Road, White Bluff 37187</p>
+      <p><strong>Name:</strong> *************</p>
+      <p><strong>Address:</strong> addressssssssssssssssssss</p>
       <p><strong>Phone:</strong> +1 (615) 556-7764‬</p>
-      <p><strong>Email:</strong> emmmaiillll </p>
+      <p><strong>Email:</strong> thewarpath63@gmail.com </p>
     </div>
 
     <div class="section">
       <h2>Vehicle Information 🚗</h2>
-      <p><strong>Make:</strong> Toyotalllll carrrr</p>
+      <p><strong>Make:</strong> Mecedes car</p>
       <p><strong>Model:</strong> Ford F-100 4WD (1970–1976)</p>
       <p><strong>Year:</strong> 2020</p>
       <p><strong>Color:</strong> Vintage Blue</p>
@@ -207,21 +229,20 @@
       </div>
     </div>
 
-    <form id="deliveryForm">
-      <div class="section">
-        <h2>Delivery Details (Fillable)</h2>
-        <label>Delivery Date: <input type="date" name="deliveryDate" required></label><br>
-        <label>Delivery Time: <input type="time" name="deliveryTime" required></label><br>
-        <label>Delivery Location: <input type="text" name="deliveryLocation" required></label><br>
-        <label>Delivered By: <input type="text" name="agentName" required></label><br>
-        <label>Client Identification Verified: <input type="checkbox" name="idVerified"></label>
-      </div>
+    <div class="section">
+      <h2>Delivery Details</h2>
+      <p><strong>Delivery Date: </strong> May 1, 2025</p>
+      <p><strong>Delivery Time: </strong> 5:00PM</p>
+      <p><strong>Delivery Location: </strong> 1005 old charlotte road white Bluff 37187</p>
+      <p><strong>Delivered By: </strong> FedEx delivery</p>
+      <p><strong>Agent's Name: </strong> Kaley Cuoco</p>
+    </div>
 
       <div class="section">
         <h2>Client Acknowledgment</h2>
         <p>I, Richard Willis, confirm that I have received the above vehicle in the listed condition, with all necessary documents and keys. I have inspected the vehicle and acknowledge its delivery.</p>
         <label>Upload Client Signature: <input type="file" name="signature" accept="image/*" required></label><br>
-        <p>Date: April 29, 2025</p>
+        <p>Date: April 30, 2025</p>
       </div>
 
       <div class="section">
@@ -230,53 +251,63 @@
         <p>Agent Signature:<br>
           <img src="https://onlinepngtools.com/images/examples-onlinepngtools/george-walker-bush-signature.png" alt="Agent Signature" style="width:180px; margin-top: 0.5rem;">
         </p>
-        <p>Date: April 29, 2025</p>
+        <p>Date: April 30, 2025</p>
       </div>
 
       <button type="submit">Submit Receipt</button>
     </form>
+  <div class="section">
+    <h2>Shipping Tracker</h2>
+    <a href="https://tracker-smoky.vercel.app/tracker.html" class="track-btn">🚚 Track Your Shipping</a>
+  </div>
   </main>
-
   <footer>
     &copy; 2025 Elite Auto Sales 🚗🚗🚗. All rights reserved.
   </footer>
 
-  <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyB04Q7-e0nPnhoDt4tBy2T23iWt4p_nLaw",
-  authDomain: "cars-11683.firebaseapp.com",
-  databaseURL: "https://cars-11683-default-rtdb.firebaseio.com",
-  projectId: "cars-11683",
-  storageBucket: "cars-11683.firebasestorage.app",
-  messagingSenderId: "884218610939",
-  appId: "1:884218610939:web:824c4d711bda9a67d15c5e"
-};
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js";
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const storage = firebase.storage();
+  const firebaseConfig = {
+    apiKey: "AIzaSyB04Q7-e0nPnhoDt4tBy2T23iWt4p_nLaw",
+    authDomain: "cars-11683.firebaseapp.com",
+    databaseURL: "https://cars-11683-default-rtdb.firebaseio.com",
+    projectId: "cars-11683",
+    storageBucket: "cars-11683.appspot.com",  // ✅ Corrected
+    messagingSenderId: "884218610939",
+    appId: "1:884218610939:web:824c4d711bda9a67d15c5e"
+  };
 
-    document.getElementById('deliveryForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const data = {};
-      formData.forEach((value, key) => data[key] = value);
-      data.idVerified = formData.get('idVerified') ? true : false;
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const storage = getStorage(app);
 
-      const file = formData.get('signature');
-      const storageRef = storage.ref(`signatures/${Date.now()}_${file.name}`);
-      const snapshot = await storageRef.put(file);
-      const signatureURL = await snapshot.ref.getDownloadURL();
+  document.getElementById('deliveryForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => data[key] = value);
+    data.idVerified = formData.get('idVerified') ? true : false;
+
+    const file = formData.get('signature');
+    const storageRef = ref(storage, `signatures/${Date.now()}_${file.name}`);
+
+    try {
+      const snapshot = await uploadBytes(storageRef, file);
+      const signatureURL = await getDownloadURL(snapshot.ref);
       data.signatureURL = signatureURL;
 
-      try {
-        await db.collection('carDeliveries').add(data);
-        alert('Delivery form submitted successfully.');
-        this.reset();
-      } catch (error) {
-        alert('Error submitting form: ' + error.message);
-      }
-    });
-  </script>
+      await addDoc(collection(db, 'carDeliveries'), data);
+      alert('Delivery form submitted successfully.');
+      this.reset();
+    } catch (error) {
+      alert('Error submitting form: ' + error.message);
+      console.error(error);
+    }
+  });
+</script>
+
 </body>
 </html>
